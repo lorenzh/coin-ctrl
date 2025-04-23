@@ -1,3 +1,6 @@
+codecov:
+  token: 7120cfd6-9951-453e-82c0-f51b6c06f78b
+
 coverage:
   status:
     project:
