@@ -25,7 +25,7 @@ export default defineConfig([
 
   // Test configuration
   {
-    files: ['**/*.test.ts'],
+    files: ['**/_tests_/*', '**/*.{test,spec}.{js,ts}'],
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-non-null-assertion': 'off',
