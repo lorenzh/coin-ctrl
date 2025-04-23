@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "oven.bun-vscode",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "tamasfe.even-better-toml",
+    "unifiedjs.vscode-mdx",
+    "ms-vscode-remote.remote-containers",
+    "ms-azuretools.vscode-docker"
+  ]
+}
