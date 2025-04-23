@@ -1,5 +1,12 @@
 {
-    "github.copilot.chat.commitMessageGeneration.instructions": [
-        { "text": "Use conventional commit message format." }
-    ]
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    { "text": "Use conventional commit message format." }
+  ]
 }
