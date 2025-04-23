@@ -6,3 +6,5 @@ bun = true
 [test]
 preload = ["./test-setup.ts"]
 root = "src"
+coverageDir = "coverage"
+coverageReporter  = ["text", "lcov"]

@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get Bun version from .prototools
+        id: get-bun-version
+        run: echo "BUN_VERSION=$(grep -oP 'bun = "\K[^"]+' .prototools)" >> $GITHUB_ENV
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: ${{ env.BUN_VERSION }}
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Check formatting
+        run: bun run check-format
+
+      - name: Lint
+        run: bun run lint
+
+      - name: Run tests
+        run: bun test --coverage
+
+      - name: Upload coverage report to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: lorenzh/coin-ctrl
