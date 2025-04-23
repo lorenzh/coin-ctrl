@@ -11,7 +11,9 @@
     "check-format": "prettier --check \"src/**/*.{ts,js}\"",
     "check": "bun run check-format && bun run lint && tsc --noEmit",
     "prepare": "husky",
-    "test": "bun test"
+    "test": "bun test",
+    "test:coverage": "bun test --coverage",
+    "ci": "bun test --reporter=junit --reporter-outfile=./junit.xml --coverage"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.1",

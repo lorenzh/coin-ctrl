@@ -26,13 +26,13 @@ jobs:
         run: bun install
 
       - name: Check formatting
-        run: bun run check-format
+        run: bun check-format
 
       - name: Lint
-        run: bun run lint
+        run: bun lint
 
       - name: Run tests
-        run: bun test --coverage
+        run: bun ci
 
       - name: Upload coverage report to Codecov
         uses: codecov/codecov-action@v5
