@@ -18,7 +18,7 @@ jobs:
         run: echo "BUN_VERSION=$(grep -oP 'bun = "\K[^"]+' .prototools)" >> $GITHUB_ENV
 
       - name: Setup Bun
-        uses: oven-sh/setup-bun@v1
+        uses: oven-sh/setup-bun@v2
         with:
           bun-version: ${{ env.BUN_VERSION }}
 
