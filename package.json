@@ -5,8 +5,13 @@
   "private": true,
   "scripts": {
     "start": "bun run src/index.ts",
-    "lint": "eslint . --ext .ts",
-    "lint:fix": "eslint . --ext .ts --fix"
+    "lint": "eslint . --ext .ts,.js",
+    "lint:fix": "eslint . --ext .ts,.js --fix",
+    "format": "prettier --write \"src/**/*.{ts,js}\"",
+    "check-format": "prettier --check \"src/**/*.{ts,js}\"",
+    "check": "bun run check-format && bun run lint && tsc --noEmit",
+    "prepare": "husky",
+    "test": "bun test"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.1",
@@ -16,6 +21,8 @@
     "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-prettier": "^5.2.6",
     "globals": "^16.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.1",
     "prettier": "3.5.3",
     "typescript-eslint": "^8.31.0"
   },
